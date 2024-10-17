@@ -1,6 +1,8 @@
 package br.com.rts.estudos.graphql.mutations.controllers;
 
+import br.com.rts.estudos.graphql.mutations.controllers.requests.BookInput;
 import br.com.rts.estudos.graphql.mutations.entities.Book;
+import br.com.rts.estudos.graphql.mutations.mappers.BookMapper;
 import br.com.rts.estudos.graphql.mutations.repositories.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.graphql.data.method.annotation.Argument;
@@ -17,6 +19,7 @@ import java.util.List;
 public class BookController {
 
     private final BookRepository repository;
+    private final BookMapper mapper;
 
     @QueryMapping
     public List<Book> findAllBooks() {
@@ -36,5 +39,12 @@ public class BookController {
                 .author(author)
                 .gender(gender)
                 .build());
+    }
+
+    @MutationMapping
+    public Book addBook(@Argument BookInput bookInput){
+        return repository
+                .save(mapper
+                        .inputToEntity(bookInput));
     }
 }
