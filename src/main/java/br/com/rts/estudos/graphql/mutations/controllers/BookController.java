@@ -47,4 +47,12 @@ public class BookController {
                 .save(mapper
                         .inputToEntity(bookInput));
     }
+
+    @MutationMapping
+    public List<Book> batchCreate(@Argument List<BookInput> bookInputs){
+        return repository
+                .saveAll(bookInputs.stream()
+                        .map(mapper::inputToEntity)
+                        .toList());
+    }
 }
