@@ -17,10 +17,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DataLoaderCommandLineRunner implements CommandLineRunner {
 
-    public static final int COUNT_TAGS = 20;
-    public static final int COUNT_SESSIONS = 100;
-    public static final int COUNT_SPEAKERS = 1000;
-    public static final int COUNT_EVENTS = 10;
+    public static final int COUNT_REVIEWS = 100;
+    public static final int COUNT_BOOKS = 10;
 
     private final BookRepository repository;
 
@@ -42,7 +40,7 @@ public class DataLoaderCommandLineRunner implements CommandLineRunner {
 
         List<Review> reviews = new ArrayList<>();
 
-        for (int count = 0; count < COUNT_SESSIONS; count++) {
+        for (int count = 0; count < COUNT_REVIEWS; count++) {
             reviews.add(Review
                     .builder()
                     .title(faker.book().title())
@@ -58,7 +56,7 @@ public class DataLoaderCommandLineRunner implements CommandLineRunner {
         log.info("Creating the Events List in dataBase");
 
         var books = new ArrayList<Book>();
-        for (int count = 0; count < COUNT_EVENTS; count++) {
+        for (int count = 0; count < COUNT_BOOKS; count++) {
 
             books.add(Book
                     .builder()
