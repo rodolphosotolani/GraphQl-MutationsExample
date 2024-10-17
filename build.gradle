@@ -27,6 +27,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-graphql'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    //DATA-FAKER - GERADOR DADOS
+    implementation 'net.datafaker:datafaker:2.3.0'
 
     compileOnly 'org.projectlombok:lombok'
 
