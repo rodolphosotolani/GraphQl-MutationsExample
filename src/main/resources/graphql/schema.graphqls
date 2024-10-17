@@ -1,5 +1,13 @@
 type Mutation {
     createBook(title: String!, pages: Int!, author: String!, gender: String!): Book
+    addBook(bookInput: BookInput): Book
+}
+
+input BookInput {
+    title: String!
+    pages: Int!
+    author: String!
+    gender: String!
 }
 
 type Query{
