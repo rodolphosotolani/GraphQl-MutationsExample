@@ -29,6 +29,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     //DATA-FAKER - GERADOR DADOS
     implementation 'net.datafaker:datafaker:2.3.0'
+    //MAPSTRUCT - PARSER DE OBJETOS
+    implementation 'org.mapstruct:mapstruct:1.6.2'
 
     compileOnly 'org.projectlombok:lombok'
 
@@ -38,7 +40,8 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
 
     annotationProcessor 'org.projectlombok:lombok'
-
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.2'
+    
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework:spring-webflux'
     testImplementation 'org.springframework.graphql:spring-graphql-test'
