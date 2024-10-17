@@ -1,6 +1,7 @@
 type Mutation {
     createBook(title: String!, pages: Int!, author: String!, gender: String!): Book
     addBook(bookInput: BookInput): Book
+    batchCreate(bookInputs: [BookInput!]): [Book]
 }
 
 input BookInput {
